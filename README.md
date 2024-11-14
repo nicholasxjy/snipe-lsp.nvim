@@ -1,6 +1,8 @@
 # snipe-lsp 
 
-snipe-lsp adds some lsp support to ["leath-dub/snipe.nvim"]("https://github.com/leath-dub/snipe.nvim") by providing a way to navigate through symbols in the current buffer.
+snipe-lsp adds some lsp support to ["leath-dub/snipe.nvim"](https://github.com/leath-dub/snipe.nvim) by providing a way to navigate through symbols in the current buffer.
+
+![output](https://github.com/user-attachments/assets/16e110f8-b2b8-4c9f-aa3b-79292835b23e)
 
 ## Features
 
