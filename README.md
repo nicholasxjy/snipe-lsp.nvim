@@ -16,14 +16,11 @@ Use your favorite plugin manager. For example, with here is how you can install 
 
 ```lua
 {
-    'kungfusheep/snipe-lsp',
-    dependencies = {
-        'leath-dub/snipe.nvim'
-    },
-    config = function()
-        require'snipe-lsp'.setup()
-    end
-}
+	"kungfusheep/snipe-lsp.nvim",
+	event = "VeryLazy",
+	dependencies = "leath-dub/snipe.nvim",
+	opts = {},
+},
 ```
 
 
