@@ -17,9 +17,9 @@ Use your favorite plugin manager. For example, with here is how you can install 
 ```lua
 {
 	"kungfusheep/snipe-lsp.nvim",
+	event = "VeryLazy",
 	dependencies = "leath-dub/snipe.nvim",
 	opts = {},
-	cmd = { "SnipeLspSymbols", "SnipeLspSymbolsSplit", "SnipeLspSymbolsVSplit" },
 },
 ```
 
