@@ -119,7 +119,9 @@ local function open_symbols_menu()
 end
 
 return {
-	setup = function()
-		vim.keymap.set("n", "<leader>n", open_symbols_menu, { desc = "Navigate LSP Symbols" })
+	setup = function(config)
+		local lconfig = config or { mappings = { open = "<leader>n" } }
+		local mappings = lconfig.mappings or { open = "<leader>n" }
+		vim.keymap.set("n", mappings.open, open_symbols_menu, { desc = "Navigate LSP Symbols" })
 	end,
 }
