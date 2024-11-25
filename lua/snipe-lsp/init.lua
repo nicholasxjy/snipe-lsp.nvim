@@ -56,7 +56,7 @@ local Menu = require('snipe.menu')
 --- add an escape keymap to the menu
 --- @param menu table snipe menu instance
 --- @return nil
-local function add_escape_keymap(menu)
+local function add_close_keymap(menu)
 	menu:add_new_buffer_callback(function(m)
 		vim.keymap.set("n", "<esc>", function()
 			m:close()
@@ -73,7 +73,7 @@ local function open_symbols_menu()
 	local main_win = vim.api.nvim_get_current_win()
 
 	local menu = Menu:new { position = "cursor", open_win_override = { title = "LSP Document Symbols" } }
-	add_escape_keymap(menu)
+	add_close_keymap(menu)
 
 	menu:open(symbols, function(m, i)
 		local pos = get_symbol_pos(symbols[i], main_buf)
@@ -92,7 +92,7 @@ local function open_symbols_menu_for_split(split)
 
 		local main_buf = vim.api.nvim_get_current_buf()
 		local menu = Menu:new { position = "cursor", open_win_override = { title = "LSP Document Symbols -> Split" } }
-		add_escape_keymap(menu)
+		add_close_keymap(menu)
 
 		menu:open(symbols, function(m, i)
 			m:close() -- quite important to close the menu before opening a split
