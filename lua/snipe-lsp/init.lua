@@ -57,10 +57,23 @@ local Menu = require('snipe.menu')
 --- @param menu table snipe menu instance
 --- @return nil
 local function add_close_keymap(menu)
+
+	local main_buf = vim.api.nvim_get_current_buf()
+	local main_win = vim.api.nvim_get_current_win()
+
 	menu:add_new_buffer_callback(function(m)
 		vim.keymap.set("n", "<esc>", function()
 			m:close()
 		end, { nowait = true, buffer = m.buf })
+
+		vim.keymap.set("n", "<cr>", function()
+			local hovered = m:hovered()
+			local symbol = m.items[hovered]
+			local pos = get_symbol_pos(symbol, main_buf)
+			m:close()
+			vim.api.nvim_win_set_cursor(main_win, { pos[1], pos[2] })
+		end, { nowait = true, buffer = m.buf })
+
 	end)
 end
 

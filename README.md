@@ -36,7 +36,7 @@ You can configure snipe-lsp by passing a table to the setup function. Here is an
 }
 ```
 
- ## Usage
+## Usage
 
 You can use the default keymaps provided. The plugin provides three commands:
 
